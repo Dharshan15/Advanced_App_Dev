@@ -6,6 +6,7 @@ import UserEnquiry from './pages/Shared/UserEnquiry';
 import AdminEnquiries from './pages/Admin/AdminEnquiries';
 import AdminProfile from './components/Admin/AdminProfile';
 import TermsAndConditions from './pages/Terms';
+import ViewEnquiry from './pages/Shared/ViewEnquiry';
 
 const WebLayout = lazy(() => import('./layouts/WebLayout'));
 const Signup = lazy(() => import('./pages/Auth/Signup'));
@@ -45,6 +46,7 @@ function App() {
           <Route path='/user/membership' element={<Membership/>}/>
           <Route path='/user/courses' element={<Courses/>}/>
           <Route path='/user/enquiry' element={<UserEnquiry/>}/>
+          <Route path='/user/viewenquiry' element={<ViewEnquiry/>}/>
           </Route>
 
           <Route element={<AdminLayout />}>

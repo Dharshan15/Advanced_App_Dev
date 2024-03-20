@@ -35,7 +35,7 @@ const UserDashboard = () => {
         {/* View Enquiry Box (optional for keeping layout consistent) */}
         <div className="bg-white rounded-lg shadow-md p-6 flex flex-col items-center justify-center hover:bg-purple-50">
           <h2 className="text-xl font-semibold text-black mb-4">View Enquiry</h2>
-          <NavLink to='/user/enquiry'><button className="bg-purple-500 hover:bg-purple-700 text-white font-bold py-2 px-4 rounded focus:outline-none">
+          <NavLink to='/user/viewenquiry'><button className="bg-purple-500 hover:bg-purple-700 text-white font-bold py-2 px-4 rounded focus:outline-none">
             See Enquiries
           </button></NavLink>
         </div>

@@ -38,7 +38,7 @@ const AdminLeftbar = () => {
         <>
 
             <div className='w-[15vw] bg-purple-200 shadow-md shadow-purple-500 flex flex-col'>
-                <div className='h-[5vh]  text-black flex items-center justify-center mt-8 mb-36 w-full font-bold '>
+                <div className='h-[5vh]  text-black flex items-center justify-center mt-7 mb-28 w-full font-bold '>
                 <h1 className='font-extrabold text-gray-600 text-xl'>
             Z
             <span className='text-violet-800'>inquire</span>

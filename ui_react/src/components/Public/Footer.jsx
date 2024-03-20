@@ -76,7 +76,7 @@ const Footer = () => {
         className="text-gray-600 text-base"
        
       ><span className=' font-thin'>© 2023 Copyright :</span> Z<span className='text-violet-800'>
-      inquire <span className=' text-black font-light'>, <NavLink to="/terms">Terms and conditions</NavLink></span>
+      inquire<span className=' text-black font-light'>, <NavLink to="/terms">Terms and conditions</NavLink></span>
     </span></a></h1>
     </div>
     </div>
