@@ -14,10 +14,8 @@ import lombok.Data;
 @Builder
 public class User {
 
-
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Long uid;
-    
+    private Long uid;    
     
 }
