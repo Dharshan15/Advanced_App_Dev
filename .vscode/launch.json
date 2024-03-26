@@ -1,0 +1,14 @@
+{
+    "configurations": [
+        {
+            "type": "java",
+            "name": "Spring Boot-ZinquireApplication<zinquire>",
+            "request": "launch",
+            "cwd": "${workspaceFolder}",
+            "mainClass": "com.zor.zinquire.ZinquireApplication",
+            "projectName": "zinquire",
+            "args": "",
+            "envFile": "${workspaceFolder}/.env"
+        }
+    ]
+}
