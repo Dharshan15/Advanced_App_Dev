@@ -1,7 +1,6 @@
 import React, { useState, useEffect } from 'react';
 
 const AdminCourse = () => {
-  // Initialize courses state with an empty array
   const [courses, setCourses] = useState([]);
   const [newCourse, setNewCourse] = useState({
     name: '',
@@ -9,9 +8,9 @@ const AdminCourse = () => {
     offeredBy: '',
     fee: '',
   });
+  const [editingCourseId, setEditingCourseId] = useState(null);
 
   useEffect(() => {
-    // Load courses from local storage on component mount
     const storedCourses = JSON.parse(localStorage.getItem('courses'));
     if (storedCourses) {
       setCourses(storedCourses);
@@ -19,12 +18,10 @@ const AdminCourse = () => {
   }, []);
 
   useEffect(() => {
-    // Save courses to local storage whenever courses state changes
     localStorage.setItem('courses', JSON.stringify(courses));
   }, [courses]);
 
   const handleAddCourse = () => {
-    // Your logic to add a new course
     if (newCourse.name && newCourse.duration && newCourse.offeredBy && newCourse.fee) {
       const updatedCourses = [
         ...courses,
@@ -38,9 +35,9 @@ const AdminCourse = () => {
   };
 
   const handleEditCourse = (id) => {
-    setEditingCourseId(id); // Set editingCourseId to the selected course ID
+    setEditingCourseId(id);
     const courseToEdit = courses.find((course) => course.id === id);
-    setNewCourse(courseToEdit); // Populate the form with the course data to edit
+    setNewCourse(courseToEdit);
   };
 
   const handleSaveEdit = () => {
@@ -48,12 +45,12 @@ const AdminCourse = () => {
       course.id === editingCourseId ? { ...newCourse, id: editingCourseId } : course
     );
     setCourses(updatedCourses);
-    setEditingCourseId(null); // Reset editingCourseId after saving edit
-    setNewCourse({ name: '', duration: '', offeredBy: '', fee: '' }); // Clear the form fields
+    setEditingCourseId(null);
+    setNewCourse({ name: '', duration: '', offeredBy: '', fee: '' });
   };
+  
 
   const handleDeleteCourse = (id) => {
-    // Your logic to delete a course
     const updatedCourses = courses.filter((course) => course.id !== id);
     setCourses(updatedCourses);
   };
@@ -120,18 +117,37 @@ const AdminCourse = () => {
                     <span className="font-semibold">Course Fee:</span> {course.fee}
                   </p>
                   <div className="flex justify-between items-center">
-                  <button
-                  className="text-sm text-purple-500 hover:underline"
-                  onClick={() => handleEditCourse(course.id)}
-                >
-                  Edit
-                </button>
-                <button
-                  className="text-sm text-red-500 hover:underline ml-2"
-                  onClick={() => handleDeleteCourse(course.id)}
-                >
-                  Delete
-                </button>
+                    {editingCourseId === course.id ? (
+                      <>
+                        <button
+                          className="text-sm text-purple-500 hover:underline"
+                          onClick={handleSaveEdit}
+                        >
+                          Save
+                        </button>
+                        <button
+                          className="text-sm text-red-500 hover:underline ml-2"
+                          onClick={() => setEditingCourseId(null)}
+                        >
+                          Cancel
+                        </button>
+                      </>
+                    ) : (
+                      <>
+                        <button
+                          className="text-sm text-purple-500 hover:underline"
+                          onClick={() => handleEditCourse(course.id)}
+                        >
+                          Edit
+                        </button>
+                        <button
+                          className="text-sm text-red-500 hover:underline ml-2"
+                          onClick={() => handleDeleteCourse(course.id)}
+                        >
+                          Delete
+                        </button>
+                      </>
+                    )}
                   </div>
                 </div>
               </div>

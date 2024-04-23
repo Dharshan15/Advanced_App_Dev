@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react';
+import { Link } from 'react-router-dom';
 
 const AdminEnquiries = () => {
   const [enquiries, setEnquiries] = useState([]);
@@ -53,7 +54,7 @@ const AdminEnquiries = () => {
                     <td className="p-2">{enquiry.date}</td>
                     <td className="p-2">{enquiry.course}</td>
                     <td className="p-2">{enquiry.description}</td>
-                    <td className="p-2">{enquiry.email}</td>
+                    <td className="p-2"><a href={`mailto:${enquiry.email}`}>{enquiry.email}</a></td>
                     <td className="p-2">
                       <select
                         value={enquiry.status}

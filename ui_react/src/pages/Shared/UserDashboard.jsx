@@ -1,5 +1,6 @@
 import React from 'react';
 import {NavLink } from 'react-router-dom';
+import Footer from '../../components/Public/Footer';
 
 const UserDashboard = () => {
   return (
@@ -40,6 +41,9 @@ const UserDashboard = () => {
           </button></NavLink>
         </div>
       </div>
+      <br/>
+      <br/>
+      <Footer/>
     </div>
   );
 };
